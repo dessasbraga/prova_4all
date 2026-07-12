@@ -1,12 +1,15 @@
 package testcases;
 
 
-import org.junit.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.WebDriver;
+import pages.HomePage;
 import pages.*;
 import reports.ScreenShot;
-import support.Browser;
-import util.Path;
+import support.*;
+import util.*;
 
 import java.util.concurrent.TimeUnit;
 
@@ -32,28 +35,28 @@ public class Challenge2{
     @Test
     public void AdicionarAoCarrinho() {
         HomePage homePage = new HomePage(driver);
-        homePage.clickAbrirSeletorCategorias()
-                .clickSelecionarCategoriaBebidas()
-                .clickAdicionarCocaCola()
-                .clickAdicionarFanta()
-                .clickAdicionarAgua()
-                .clickAbrirSeletorCategorias()
-                .clickSelecionarCategoriaTodos()
-                .clickAdicionarRissole();
+        homePage.clickAbrirSeletorCategorias();
+        homePage.clickSelecionarCategoriaBebidas();
+        homePage.clickAdicionarCocaCola();
+        homePage.clickAdicionarFanta();
+        homePage.clickAdicionarAgua();
+        homePage.clickAbrirSeletorCategorias();
+        homePage.clickSelecionarCategoriaTodos();
+        homePage.clickAdicionarRissole();
 
 
         ScreenShot.captureScreenShot(driver, Path.URL+ Path.DESAFIO_2 + "_Home.png");
 
-                 homePage.clickAcessarCarrinho();
+        homePage.clickAcessarCarrinho();
         ShopCartPage shopCartPage = new ShopCartPage(driver);
-        shopCartPage.clickAumentarQuantidadeRissole()
-                .clickAumentarQuantidadeRissole()
-                .clickAumentarQuantidadeRissole()
-                .clickAumentarQuantidadeRissole()
-                .clickAumentarQuantidadeRissole()
-                .clickAumentarQuantidadeRissole()
-                .clickAumentarQuantidadeRissole()
-                .clickAumentarQuantidadeRissole();
+        shopCartPage.clickAumentarQuantidadeRissole();
+        shopCartPage.clickAumentarQuantidadeRissole();
+        shopCartPage.clickAumentarQuantidadeRissole();
+        shopCartPage.clickAumentarQuantidadeRissole();
+        shopCartPage.clickAumentarQuantidadeRissole();
+        shopCartPage.clickAumentarQuantidadeRissole();
+        shopCartPage.clickAumentarQuantidadeRissole();
+        shopCartPage.clickAumentarQuantidadeRissole();
 
 
         ScreenShot.captureScreenShot(driver, Path.URL + Path.DESAFIO_2 + "_ShopCart_Apos_Adicionar_Rissole.png");
